@@ -2,8 +2,14 @@
 <html>
   <head></head>
   <body>
-    <p>
-      The SECRET NUMBER is <%= number %>
-    </p>
+    <p><%= message %></p>
+    <% if message == "You got it right!" %>
+      <p>The SECRET NUMBER is <%= number %></p>
+    <% end %>
+
+    <form>
+      <input type="text" name="guess">
+      <input type="submit" value="Guess!">
+    </form>
   </body>
 </html>
