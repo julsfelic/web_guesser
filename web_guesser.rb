@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader"
 
 @@guesses = 5
+@@cheat_mode = false
 
 set :number, rand(100)
 set :message, ""
@@ -44,10 +45,12 @@ end
 
 get '/' do
   guess = params["guess"].to_i
+  @@cheat_mode = true if params["cheat"]
   number = settings.number
   check_guess(guess)
   check_guesses_remaining
   erb :index, locals: { number: number,
                         message: settings.message,
-                        color: settings.color }
+                        color: settings.color,
+                        cheat: @@cheat_mode }
 end
