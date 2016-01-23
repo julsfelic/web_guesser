@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        background: <%= color %>;
+      }
+    </style>
+  </head>
   <body>
     <p><%= message %></p>
     <% if message == "You got it right!" %>
