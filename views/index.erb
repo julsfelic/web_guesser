@@ -9,10 +9,9 @@
   </head>
   <body>
     <p><%= message %></p>
-    <% if message == "You got it right!" || cheat %>
+    <% if color == "#080" || cheat %>
       <p>The SECRET NUMBER is <%= number %></p>
     <% end %>
-
     <form>
       <input type="text" name="guess">
       <input type="submit" value="Guess!">
